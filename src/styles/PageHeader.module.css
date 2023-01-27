@@ -1,11 +1,24 @@
 .panel{
-    position: fixed;
+    position: sticky;
     right: 0;
-    top: 56px;
     width: 100%;
     background: var(--bg-color);
     color: white;
     opacity: 1;
+}
+.panel2 {
+    position: sticky;
+    right: 0;
+
+    width: 100%;
+    background: var(--bg-color);
+    color: white;
+    opacity: 1;
+
+}
+.panel2 span{
+    margin-top: 6px;
+    margin-right: 6px;
 }
 .panel a{
     margin-left: 6px;

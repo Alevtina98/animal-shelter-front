@@ -1,15 +1,8 @@
 import { FC, memo } from "react";
-import {
-  Badge,
-  Button,
-  Container,
-  Form,
-  Nav,
-  NavDropdown,
-} from "react-bootstrap";
+import { Badge, Button, Container } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import styles from "@/styles/PageHeader.module.css";
-
+import { FaTimes } from "react-icons/fa";
 // примеры
 // https://dobrovmeste.ru/novosti-fonda-pomoshhi-bezdomnym-zhivotnym
 
@@ -28,15 +21,6 @@ const AnimalsHeader: FC<IPageHeaderProps> = ({ count }) => {
     >
       <Container fluid>
         <Navbar.Text> Колличество животных: {count}</Navbar.Text>
-        <Button href="" className="">
-          Фильтр
-        </Button>
-        <Badge pill bg="light" text="dark">
-          ищут дом
-          <Button href="" className="">
-            Удалить
-          </Button>
-        </Badge>
 
         <Navbar.Collapse id="page-navbar-nav" className="justify-content-end">
           <Button

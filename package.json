@@ -2,11 +2,14 @@
   "name": "animal-shelter-front",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://Alevtina98.github.io/animal-shelter-front",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@next/font": "13.1.4",
@@ -25,6 +28,10 @@
     "react": "18.2.0",
     "react-bootstrap": "^2.7.0",
     "react-dom": "18.2.0",
+    "react-icons": "^4.7.1",
     "typescript": "4.9.4"
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }

@@ -5,12 +5,11 @@ import { memo, useEffect } from "react";
 import Layout from "@/component/Layout/Layout";
 
 const App = ({ Component, pageProps }: AppProps) => {
-  const renderWithLayout =
-    Component.getLayout ||
-    function (page: any) {
-      return <Layout>{page}</Layout>;
-    };
+  const renderWithLayout = function (page: any) {
+    return <Layout>{page}</Layout>;
+  };
   useEffect(() => {
+    // @ts-ignore
     import("bootstrap/dist/js/bootstrap");
   }, []);
   return renderWithLayout(<Component {...pageProps} />);

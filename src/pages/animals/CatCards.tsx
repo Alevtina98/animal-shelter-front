@@ -1,6 +1,5 @@
-import React, { FC, useCallback, useEffect, useMemo, useState } from "react";
-import { Button, Card, CardGroup } from "react-bootstrap";
-import * as animalFiles from "public/animals.json";
+import { FC } from "react";
+import { Button, Card } from "react-bootstrap";
 import styles from "@/styles/Card.module.css";
 interface ICatCardsProps {
   list: any[];
@@ -9,7 +8,7 @@ interface ICatCardsProps {
 export const CatCards: FC<ICatCardsProps> = ({ list }) => {
   return (
     <div className={styles.cards}>
-      {list.map((item, index) => (
+      {list?.map((item, index) => (
         <Card key={item.id} className="col-sm-6">
           <Card.ImgOverlay></Card.ImgOverlay>
           <Card.Img variant="top" src={`${item.mediaCard.photo[0]}`} />
