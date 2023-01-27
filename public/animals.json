@@ -11,7 +11,7 @@
       "passport": {
         "gender": "ж",
         "name": "Мария",
-        "status": "shelter",
+        "status": "ищет дом",
         "groupId": 1,
         "registrationId": 1,
         "ownerId": null,
@@ -31,7 +31,7 @@
       "passport": {
         "gender": "м",
         "name": "Инокентий",
-        "status": "shelter",
+        "status": "ищет дом",
         "groupId": 1,
         "registrationId": 1,
         "ownerId": null,
@@ -51,7 +51,7 @@
       "passport": {
         "gender": "ж",
         "name": "Асти",
-        "status": "shelter",
+        "status": "ищет дом",
         "groupId": 1,
         "registrationId": 1,
         "ownerId": null,

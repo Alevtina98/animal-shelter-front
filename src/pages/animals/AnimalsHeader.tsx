@@ -1,5 +1,12 @@
 import { FC, memo } from "react";
-import { Button, Container, Form, Nav, NavDropdown } from "react-bootstrap";
+import {
+  Badge,
+  Button,
+  Container,
+  Form,
+  Nav,
+  NavDropdown,
+} from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import styles from "@/styles/PageHeader.module.css";
 
@@ -20,7 +27,17 @@ const AnimalsHeader: FC<IPageHeaderProps> = ({ count }) => {
       variant="dark"
     >
       <Container fluid>
-        <Navbar.Text> Колличество: {count}</Navbar.Text>
+        <Navbar.Text> Колличество животных: {count}</Navbar.Text>
+        <Button href="" className="">
+          Фильтр
+        </Button>
+        <Badge pill bg="light" text="dark">
+          ищут дом
+          <Button href="" className="">
+            Удалить
+          </Button>
+        </Badge>
+
         <Navbar.Collapse id="page-navbar-nav" className="justify-content-end">
           <Button
             variant="outline-light"

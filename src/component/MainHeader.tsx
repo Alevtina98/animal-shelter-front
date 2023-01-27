@@ -4,11 +4,14 @@ import Navbar from "react-bootstrap/Navbar";
 
 // примеры
 // https://dobrovmeste.ru/novosti-fonda-pomoshhi-bezdomnym-zhivotnym
+
+// Группа ВКонтакте
+//https://vk.com/lubimchik76?ysclid=ld9dg7m7ad739621248
 const MainHeader: FC = () => {
   return (
     <Navbar bg="light" fixed="top" expand="sm" collapseOnSelect>
       <Container fluid>
-        <Navbar.Brand href="https://vk.com/lubimchik76?ysclid=ld9dg7m7ad739621248">
+        <Navbar.Brand href="/team">
           {/*<img
             alt=""
             src="/icon/Cat.svg"
@@ -22,7 +25,6 @@ const MainHeader: FC = () => {
             Помощь бездомным животным
           </span>*/}
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
         {/* <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
@@ -33,20 +35,29 @@ const MainHeader: FC = () => {
           </Navbar.Text>
         </Navbar.Collapse>*/}
 
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse
+          id="basic-navbar-nav"
+          className="justify-content-center"
+        >
           <Nav className="me-auto">
-            {/*волонтеры и их истории/СМИ*/}
-            <Nav.Link href="/team">Команда</Nav.Link>
-            {/*кураторство/уборка/водитель/посылки/пожертвования*/}
-            <Nav.Link href="/help">Помощь</Nav.Link>
+            <Nav.Link href="/help">Помощь бездомным животным </Nav.Link>
+
+            {/* волонтеры и их истории/СМИ
+            <Nav.Link href="/team">Команда</Nav.Link>*/}
+            {/*   кураторство/уборка/водитель/посылки/пожертвования
+            <Nav.Link href="/help">Помощь</Nav.Link>*/}
             {/*на улице/на лечении/на пристрое/дома - для всех форм фильтр*/}
-            <Nav.Link href="/animals">Животные</Nav.Link>
+            <Nav.Link href="/animals">Любимчики</Nav.Link>
           </Nav>
-          <Nav className="me-auto" className="justify-content-end">
-            <Nav.Link href="/login">Регистрация </Nav.Link>
-            <Nav.Link href="/login">Вход </Nav.Link>
-          </Nav>
+          <Navbar.Collapse className="justify-content-end">
+            <Nav>
+              <Nav.Link href="/login">Регистрация </Nav.Link>
+              <Nav.Link href="/login">Вход </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
         </Navbar.Collapse>
+
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
       </Container>
     </Navbar>
   );

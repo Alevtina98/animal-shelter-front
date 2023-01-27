@@ -14,7 +14,10 @@ export const CatCards: FC<ICatCardsProps> = ({ list }) => {
           <Card.ImgOverlay></Card.ImgOverlay>
           <Card.Img variant="top" src={`${item.mediaCard.photo[0]}`} />
           <Card.Body className="p-fixed">
-            <Card.Title>{item.nameList[0]}</Card.Title>
+            <Card.Title>
+              {item.nameList[0]}{" "}
+              <span className="text-secondary"> {item.passport.status}</span>
+            </Card.Title>
             <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
             <Card.Text>{item.mediaCard.desc}</Card.Text>
             <Card.Link className="float-end">
