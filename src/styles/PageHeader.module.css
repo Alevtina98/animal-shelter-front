@@ -1,0 +1,16 @@
+.panel{
+    position: fixed;
+    right: 0;
+    top: 56px;
+    width: 100%;
+    background: var(--bg-color);
+    color: white;
+    opacity: 1;
+}
+.panel a{
+    margin-left: 6px;
+}
+.tabs a, .tabs:hover a, .tabs a.active{
+    color: white !important;
+    background: none !important;
+}

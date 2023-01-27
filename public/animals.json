@@ -1,0 +1,63 @@
+{
+  "animals": [
+    {
+      "id":  1,
+      "nameList": ["Маруся"],
+      "genus": "cat",
+      "mediaCard": {
+        "photo": ["img/cat1.jpg","img/cat4.jpg"],
+        "desc": "Она и вправду существует, Мудрая Большая Кошка, которая воспитала Маугли! Гордая и неприступная?"
+      },
+      "passport": {
+        "gender": "ж",
+        "name": "Мария",
+        "status": "shelter",
+        "groupId": 1,
+        "registrationId": 1,
+        "ownerId": null,
+        "curatorId": 1,
+        "historyLog": ""
+      }
+    },
+    {
+      "id":  2,
+      "nameList": ["Кеша"],
+      "genus": "cat",
+      "mediaCard": {
+        "photo": ["img/cat2.jpg","img/cat5.jpg"],
+        "desc": "Иногда он Иннокентий — джентельмен и хвост трубой,\nА бывает просто Кеша — кот веселый, озорной."
+
+      },
+      "passport": {
+        "gender": "м",
+        "name": "Инокентий",
+        "status": "shelter",
+        "groupId": 1,
+        "registrationId": 1,
+        "ownerId": null,
+        "curatorId": 1,
+        "historyLog": ""
+      }
+    },
+    {
+      "id":  3,
+      "nameList": ["Асти"],
+      "genus": "cat",
+      "mediaCard": {
+        "photo": ["img/cat3.jpg"],
+        "desc": "Одинокая умная девочка. Она всегда старается быть ближе к человеку... Тихонечко следует за волонтером, мечтая покорить доброе сердце!"
+
+      },
+      "passport": {
+        "gender": "ж",
+        "name": "Асти",
+        "status": "shelter",
+        "groupId": 1,
+        "registrationId": 1,
+        "ownerId": null,
+        "curatorId": 1,
+        "historyLog": ""
+      }
+    }
+  ]
+}
