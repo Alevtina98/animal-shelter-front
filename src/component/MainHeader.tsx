@@ -14,7 +14,14 @@ const MainHeader: FC = () => {
   const router = useRouter();
   const [active, setActive] = useState("/");
   return (
-    <Navbar bg="light" fixed="top" expand="sm" collapseOnSelect sticky="top">
+    <Navbar
+      bg="light"
+      fixed="top"
+      expand="sm"
+      collapseOnSelect
+      sticky="top"
+      className="w-100"
+    >
       <Container fluid>
         <Navbar.Brand href="/team">
           {/*<img

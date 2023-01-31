@@ -9,14 +9,7 @@ import { FaTimes, FaFilter } from "react-icons/fa";
 export interface IPageHeaderProps {}
 const AnimalsHeader: FC<IPageHeaderProps> = ({}) => {
   return (
-    <Navbar
-      bg="none"
-      expand="sm"
-      collapseOnSelect
-      sticky="top"
-      className={styles.panel2}
-      variant="dark"
-    >
+    <Navbar expand="sm" collapseOnSelect variant="dark">
       <Button href="" className="width-100" variant="dark">
         <FaFilter></FaFilter> Фильтр
       </Button>

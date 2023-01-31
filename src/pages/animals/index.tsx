@@ -5,6 +5,7 @@ import Layout from "@/component/Layout/Layout";
 import PageHeader from "@/pages/animals/AnimalsHeader";
 import * as animalFiles from "../../../public/animals.json";
 import FilterHeader from "@/pages/animals/FilterHeader";
+import styles from "@/styles/PageHeader.module.css";
 
 const Animals: FC = () => {
   const [list, setList] = useState<any>([]);
@@ -20,7 +21,7 @@ const Animals: FC = () => {
   }, [animalFiles]);
 
   return (
-    <div className="overflow-hidden">
+    <div>
       {/* <div className="w-100 d-flex justify-content-between">
         <h3></h3>
         <Button
@@ -30,8 +31,11 @@ const Animals: FC = () => {
           Заполнить анкету
         </Button>
       </div>*/}
-      <PageHeader count={list.length}></PageHeader>
-      <FilterHeader></FilterHeader>
+      <div className={styles.panel}>
+        <PageHeader count={list.length}></PageHeader>
+        <FilterHeader></FilterHeader>
+      </div>
+
       <CatCards list={list} />
     </div>
   );

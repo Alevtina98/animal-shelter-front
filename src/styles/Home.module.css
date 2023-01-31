@@ -1,14 +1,17 @@
+
+.mainContainer {
+  background: var(--bg-color);
+  
+}
 .main {
-  padding-top: 10px;
   display: flex;
-  flex-direction: column;
+  flex: 1;
+  flex-basis: max-content;
   justify-content: space-between;
   align-items: center;
-  min-height: 100vh;
-  background: var(--bg-color);
+  position: relative;
 
 }
-
 .description {
   display: inherit;
   justify-content: inherit;

@@ -19,6 +19,7 @@
     "@types/react-bootstrap": "^0.32.32",
     "@types/react-dom": "18.0.10",
     "bootstrap": "^5.2.3",
+    "clsx": "^1.2.1",
     "eslint": "8.32.0",
     "eslint-config-next": "13.1.4",
     "file-system": "^2.2.2",

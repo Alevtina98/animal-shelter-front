@@ -11,14 +11,7 @@ export interface IPageHeaderProps {
 }
 const AnimalsHeader: FC<IPageHeaderProps> = ({ count }) => {
   return (
-    <Navbar
-      bg="none"
-      expand="sm"
-      collapseOnSelect
-      sticky="top"
-      className={styles.panel}
-      variant="dark"
-    >
+    <Navbar expand="sm" collapseOnSelect sticky="top" variant="dark">
       <Container fluid>
         <Navbar.Text> Колличество животных: {count}</Navbar.Text>
 

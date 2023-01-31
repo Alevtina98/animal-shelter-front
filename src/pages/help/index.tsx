@@ -6,7 +6,7 @@ import styles from "@/styles/PageHeader.module.css";
 
 const Help: FC = () => {
   return (
-    <div>
+    <div className={styles.panel}>
       <Nav
         justify
         variant="tabs"

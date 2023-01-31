@@ -1,22 +1,16 @@
-.panel{
+
+.panel {
     position: sticky;
     right: 0;
+    display: contents;
     width: 100%;
     background: var(--bg-color);
     color: white;
-    opacity: 1;
 }
-.panel2 {
-    position: sticky;
-    right: 0;
-
-    width: 100%;
+.panel nav{
     background: var(--bg-color);
-    color: white;
-    opacity: 1;
-
 }
-.panel2 span{
+.panel span{
     margin-top: 6px;
     margin-right: 6px;
 }
@@ -24,6 +18,7 @@
     margin-left: 6px;
 }
 .tabs a, .tabs:hover a, .tabs a.active{
+    margin-top: 6px;
     color: white !important;
     background: none !important;
 }
