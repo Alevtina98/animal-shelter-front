@@ -13,22 +13,25 @@ const AnimalsHeader: FC<IPageHeaderProps> = ({ count }) => {
   return (
     <Navbar expand="sm" collapseOnSelect sticky="top" variant="dark">
       <Container fluid>
-        <Navbar.Text> Колличество животных: {count}</Navbar.Text>
-
-        <Navbar.Collapse id="page-navbar-nav" className="justify-content-end">
-          <Button
-            variant="outline-light"
-            href="https://vk.com/lubimchik76?w=app5619682_-38870510&ysclid=ld9dg7m7ad739621248"
-          >
-            Стать куратором
-          </Button>
-          <Button
-            variant="danger"
-            href="https://vk.com/lubimchik76?w=app5619682_-38870510&ysclid=ld9dg7m7ad739621248"
-          >
-            Приютить
-          </Button>
+        <Navbar.Collapse
+          id="page-navbar-nav-sum"
+          className="justify-content-start"
+        >
+          <Navbar.Text> Колличество животных: {count}</Navbar.Text>
         </Navbar.Collapse>
+
+        <Button
+          variant="outline-light"
+          href="https://vk.com/lubimchik76?w=app5619682_-38870510&ysclid=ld9dg7m7ad739621248"
+        >
+          Стать куратором
+        </Button>
+        <Button
+          variant="danger"
+          href="https://vk.com/lubimchik76?w=app5619682_-38870510&ysclid=ld9dg7m7ad739621248"
+        >
+          Забрать домой
+        </Button>
       </Container>
     </Navbar>
   );

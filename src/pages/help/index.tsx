@@ -1,7 +1,7 @@
 import { FC, memo } from "react";
 import { Nav } from "react-bootstrap";
-import Layout from "@/component/Layout/Layout";
-import CatCards from "@/pages/animals/CatCards";
+import Layout from "@/component/Layout";
+import AnimalCardGrid from "@/pages/animals/AnimalCardGrid";
 import styles from "@/styles/PageHeader.module.css";
 
 const Help: FC = () => {

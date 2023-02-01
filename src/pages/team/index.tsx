@@ -1,47 +1,37 @@
-import { FC, memo } from "react";
+import { FC, memo, useEffect, useState } from "react";
 import { Carousel } from "react-bootstrap";
+import * as team from "../../../public/team.json";
 
+export interface ITeamInfo {
+  title: string;
+  subTitle: string;
+  descriptionText: string;
+  helpText: string;
+  note: string;
+  img: string;
+  quoteList: [
+    {
+      text: string;
+      author: string;
+    }
+  ];
+}
 const Team: FC = () => {
+  const [info, setInfo] = useState<ITeamInfo | null>(null);
+
+  useEffect(() => {
+    const loadInfo = async () => {
+      /* If file is not selected, then show alert message */
+      if (!team) return;
+      setInfo(team as ITeamInfo);
+    };
+    loadInfo().then((r) => {});
+  }, [team]);
   return (
-    <Carousel>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=First slide&bg=373940"
-          alt="First slide"
-        />
-        <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=Second slide&bg=282c34"
-          alt="Second slide"
-        />
-
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=Third slide&bg=20232a"
-          alt="Third slide"
-        />
-
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
+    <>
+      <h2>{info?.title}</h2>
+      <div>{info?.descriptionText}</div>
+    </>
   );
 };
 export default memo(Team);

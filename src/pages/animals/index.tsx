@@ -1,8 +1,8 @@
 import { FC, memo, useEffect, useState } from "react";
 import { Badge, Button, Card, Nav, Row } from "react-bootstrap";
-import CatCards from "@/pages/animals/CatCards";
-import Layout from "@/component/Layout/Layout";
-import PageHeader from "@/pages/animals/AnimalsHeader";
+import AnimalCardGrid from "@/pages/animals/AnimalCardGrid";
+import Layout from "@/component/Layout";
+import PageHeader from "@/pages/animals/header/AnimalsHeader";
 import * as animalFiles from "../../../public/animals.json";
 import FilterHeader from "@/pages/animals/FilterHeader";
 import styles from "@/styles/PageHeader.module.css";
@@ -21,7 +21,7 @@ const Animals: FC = () => {
   }, [animalFiles]);
 
   return (
-    <div>
+    <>
       {/* <div className="w-100 d-flex justify-content-between">
         <h3></h3>
         <Button
@@ -36,8 +36,8 @@ const Animals: FC = () => {
         <FilterHeader></FilterHeader>
       </div>
 
-      <CatCards list={list} />
-    </div>
+      <AnimalCardGrid list={list} />
+    </>
   );
 };
 export default memo(Animals);

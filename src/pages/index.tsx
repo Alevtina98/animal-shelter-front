@@ -1,6 +1,6 @@
 import { Inter } from "@next/font/google";
 import { Carousel } from "react-bootstrap";
-import Layout from "@/component/Layout/Layout";
+import Layout from "@/component/Layout";
 import { memo } from "react";
 import MainCarousel from "@/component/MainCarousel";
 

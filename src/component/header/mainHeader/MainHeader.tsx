@@ -2,7 +2,7 @@ import { FC, memo, useState } from "react";
 import { Button, Container, Form, Nav, NavDropdown } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import { FaVk } from "react-icons/fa";
-import styles from "@/styles/MainHeader.module.css";
+import styles from "@/component/header/mainHeader/MainHeader.module.css";
 import { useRouter } from "next/router";
 
 // примеры
@@ -20,9 +20,9 @@ const MainHeader: FC = () => {
       expand="sm"
       collapseOnSelect
       sticky="top"
-      className="w-100"
+      className={styles.mainHeader}
     >
-      <Container fluid>
+      <Container>
         <Navbar.Brand href="/team">
           {/*<img
             alt=""
@@ -37,13 +37,16 @@ const MainHeader: FC = () => {
             Помощь бездомным животным
           </span>*/}
         </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
         <Navbar.Collapse
           id="basic-navbar-nav"
           className="justify-content-center"
         >
           <Nav activeKey={router.pathname} className="me-auto">
-            <Nav.Link href="/help">Помощь бездомным животным </Nav.Link>
+            <Nav.Link href="/team">Команда</Nav.Link>
+
+            <Nav.Link href="/help">Помощь </Nav.Link>
 
             {/* волонтеры и их истории/СМИ
             <Nav.Link href="/team">Команда</Nav.Link>*/}
@@ -71,8 +74,6 @@ const MainHeader: FC = () => {
             </Nav>
           </Navbar.Collapse>
         </Navbar.Collapse>
-
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
       </Container>
     </Navbar>
   );
