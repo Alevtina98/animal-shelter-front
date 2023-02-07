@@ -1,38 +1,206 @@
 
-
-.cards{
+.blogCard {
   display: flex;
-  flex-wrap: wrap;
-  overflow: auto;
-  max-width: 100%;
-}
-.cards button{
-  background: rgb(0 0 0 / 56%);
-  border: none;
-
-}
-.cards .card {
-  width:  10%;
-  height: 10%;
-}
-.cardBody {
-
-}
-.text {
+  flex-direction: column;
+  margin: 1rem auto;
+  box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.6%;
+  background: #fff;
+  line-height: 1.4;
+  font-family: sans-serif;
+  border-radius: 5px;
   overflow: hidden;
-  height: 10vh;
+  z-index: 0;
 }
-.cards img {
-
-  width:  100%;
+.blogCard a {
+  color: inherit;
+}
+.blogCard a:hover {
+  color: #fd5971;
+}
+.meta:hover .photo {
+  transform: scale(1.3) rotate(3deg);
+}
+.blogCard .meta {
+  position: relative;
+  z-index: 0;
+}
+.blogCard .photo {
+  object-fit: contain;
+  object-position: left;
+  width: 100%;
   height: 100%;
-  max-width: 300px  !important;
 
-  object-fit: contain; /* Всю, выше указанную, облась заполнить картинкой */
-  object-position: top;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  transition: transform 0.2s;
 }
-.cards div {
-  margin: 10px;
-  max-width: 300px  !important;
+.blogCard .details,
+.blogCard .details ul {
+  margin: auto;
+  padding: 0;
+  list-style: none;
+}
+.blogCard .details {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  margin: auto;
+  transition: left 0.2s;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 10px;
+  width: 100%;
+  font-size: 0.9rem;
+}
+.blogCard .details a {
+  -webkit-text-decoration: dotted underline;
+  text-decoration: dotted underline;
+}
+.blogCard .details ul li {
+  display: inline-block;
+}
+.blogCard .details .author:before {
+  font-family: FontAwesome;
+  margin-right: 10px;
+  content: "";
+}
+.blogCard .details .date:before {
+  font-family: FontAwesome;
+  margin-right: 10px;
+  content: "";
+}
+.blogCard .details .tags ul:before {
+  font-family: FontAwesome;
+  content: "";
+  margin-right: 10px;
+}
+.blogCard .details .tags li {
+  margin-right: 2px;
+}
+.blogCard .details .tags li:first-child {
+  margin-left: -4px;
+}
+
+
+.blogCard .description {
+  padding: 1rem;
+  background: #ffffff;
+  position: relative;
+}
+.blogCard .description h1,
+.blogCard .description h2 {
+  font-family: Poppins, sans-serif;
+}
+
+.blogCard .description h1 {
+  line-height: 1;
+  margin: 0;
+  font-size: 1.3rem;
+}
+.blogCard .description h2 {
+  font-size: 1rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #a2a2a2;
+  margin-top: 5px;
+}
+.blogCard .description .status {
+
+  margin-left: 8px;
+  color: #e18a8a;
+
+
+}
+.blogCard .description .read-more {
+  text-align: right;
+}
+.blogCard .description .read-more a {
+  color: #a64a4a;
+  display: inline-block;
+  position: relative;
+}
+.blogCard .description .read-more a:after {
+  content: "";
+  font-family: FontAwesome;
+  margin-left: -10px;
+  opacity: 0;
+  vertical-align: middle;
+  transition: margin 0.3s, opacity 0.3s;
+}
+.blogCard .description .read-more a:hover:after {
+  margin-left: 5px;
+  opacity: 1;
+}
+.blogCard p {
+  position: relative;
+  margin: 1rem 0 0;
+}
+.blogCard p:first-of-type {
+  margin-top: 1.25rem;
+}
+.blogCard p:first-of-type:before {
+  content: "";
+  position: absolute;
+  height: 5px;
+  /*  background: #ffffff;*/
+  width: 10%;
+  top: -0.75rem;
+  border-radius: 3px;
+}
+.meta:hover .details {
+  left: 0%;
+}
+@media (min-width: 640px) {
+  .blogCard {
+    flex-direction: column;
+    width: min-content;
+    min-width: calc(100% / 3 - 30px) ;
+  }
+  .blogCard .meta {
+    height: auto;
+  }
+  .blogCard .description {
+    flex-basis: 100%;
+  }
+  .blogCard .description:before {
+    transform: skewX(-3deg);
+    content: "";
+    background: #fff;
+    width: 30px;
+    position: absolute;
+    left: -10px;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+  .blogCard.alt {
+    flex-direction: row-reverse;
+  }
+  .blogCard.alt .description:before {
+    left: inherit;
+    right: -10px;
+    transform: skew(3deg);
+  }
+  .blogCard.alt .details {
+    padding-left: 25px;
+  }
+}
+@media (max-width: 640px) {
+
+  .blogCard {
+    flex-direction: column;
+    max-width: 90%;
+  }
+  .blogCard .meta {
+    height: auto;
+  }
+  .blogCard .description {
+    flex-basis: 100%;
+  }
 
 }

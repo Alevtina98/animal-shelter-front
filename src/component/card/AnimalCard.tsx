@@ -1,8 +1,6 @@
 import { FC } from "react";
-import { Button, Card } from "react-bootstrap";
-import styles from "@/component/card/Card.module.css";
+import styles from "./Card.module.css";
 import clsx from "clsx";
-
 export type AnimalStatusType = "ищет дом" | "дома";
 interface IAnimalCardProps {
   key: string;
@@ -24,11 +22,11 @@ export const AnimalCard: FC<IAnimalCardProps> = ({
   vkLink,
 }) => {
   return (
-    <div className="blog-card">
-      <div className="meta">
-        <img className="photo" src={photoPath}></img>
-        <ul className="details">
-          <li className="author">
+    <div className={styles.blogCard}>
+      <div className={styles.meta}>
+        <img className={styles.photo} src={photoPath}></img>
+        <ul className={styles.details}>
+          <li className={styles.author}>
             <a href="https://vk.com/market-38870510?w=product-38870510_6667015%2Fquery">
               {name}
             </a>
@@ -42,7 +40,7 @@ export const AnimalCard: FC<IAnimalCardProps> = ({
           </li>*/}
         </ul>
       </div>
-      <div className="description flex-fill">
+      <div className={clsx("flex-fill", styles.description)}>
         <div className="d-flex flex-column justify-content-between h-100">
           <div className="d-flex flex-column">
             <div className="d-flex text-nowrap flex-row align-bottom ">
