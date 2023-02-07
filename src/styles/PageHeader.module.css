@@ -15,9 +15,11 @@
     }
 }*/
 .filters {
+    scroll-snap-type: x mandatory;
     flex-direction: row;
 }
 .filters span {
+    scroll-snap-align: start;
     max-height: 30px;
 }
 .animalContainer {
