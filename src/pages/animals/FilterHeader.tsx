@@ -3,6 +3,7 @@ import { Badge, Button, Container, Nav } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import styles from "@/styles/PageHeader.module.css";
 import { FaTimes, FaFilter } from "react-icons/fa";
+import clsx from "clsx";
 // примеры
 // https://dobrovmeste.ru/novosti-fonda-pomoshhi-bezdomnym-zhivotnym
 
@@ -13,17 +14,28 @@ const AnimalsHeader: FC<IPageHeaderProps> = ({}) => {
       expand="sm"
       variant="dark"
       sticky="top"
-      className={styles.mainHeader}
+      className={clsx("flex-nowrap", styles.panel)}
     >
-      <Button href="" className="width-100 text-nowrap" variant="dark">
+      <Button
+        aria-expanded={true}
+        href=""
+        className="width-100 text-nowrap"
+        variant="dark"
+      >
         <FaFilter></FaFilter> Фильтр
       </Button>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-      <Container className="justify-content-start">
-        <Navbar.Collapse
-          id="page-navbar-nav-badge"
-          className="justify-content-start"
+      <Container
+        className={clsx(
+          "justify-content-start overflow-hidden  position-relative w-100 h-100",
+          styles.filtersContainer
+        )}
+      >
+        <div
+          className={clsx(
+            "d-flex flex-nowrap overflow-auto position-absolute w-100 ",
+            styles.filters
+          )}
         >
           <Badge pill bg="light" text="dark">
             ищет дом
@@ -65,7 +77,7 @@ const AnimalsHeader: FC<IPageHeaderProps> = ({}) => {
               <FaTimes />
             </Button>
           </Badge>
-        </Navbar.Collapse>
+        </div>
       </Container>
     </Navbar>
   );

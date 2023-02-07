@@ -1,8 +1,31 @@
+.filtersContainer {
+    padding: 0;
+    margin-left: 10px;
+}
 
-.panel {
+.filters::-webkit-scrollbar {
+    display: none;
+}
+
+/*@media (min-width: 500px) {
+    .filters {
+
+        display: flex;
+       flex-wrap: wrap !important;
+    }
+}*/
+.filters {
+    flex-direction: row;
+}
+.filters span {
+    max-height: 30px;
+}
+.animalContainer {
+    display: contents;
+}
+.panel, .animalContainer {
     position: sticky;
     right: 0;
-    display: contents;
     width: 100%;
     background: var(--bg-color);
     color: white;
@@ -11,14 +34,14 @@
     background: var(--bg-color);
 }
 .panel span{
-    margin-top: 6px;
+
     margin-right: 6px;
 }
 .panel a{
     margin-left: 6px;
 }
 .tabs a, .tabs:hover a, .tabs a.active{
-    margin-top: 6px;
+
     color: white !important;
     background: none !important;
 }

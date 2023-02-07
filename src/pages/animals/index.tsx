@@ -31,7 +31,7 @@ const Animals: FC = () => {
           Заполнить анкету
         </Button>
       </div>*/}
-      <div className={styles.panel}>
+      <div className={styles.animalContainer}>
         <PageHeader count={list.length}></PageHeader>
         <FilterHeader></FilterHeader>
       </div>

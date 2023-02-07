@@ -3,6 +3,7 @@ import { Badge, Button, Container } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import styles from "@/styles/PageHeader.module.css";
 import { FaTimes } from "react-icons/fa";
+import clsx from "clsx";
 // примеры
 // https://dobrovmeste.ru/novosti-fonda-pomoshhi-bezdomnym-zhivotnym
 
@@ -11,7 +12,13 @@ export interface IPageHeaderProps {
 }
 const AnimalsHeader: FC<IPageHeaderProps> = ({ count }) => {
   return (
-    <Navbar expand="sm" collapseOnSelect sticky="top" variant="dark">
+    <Navbar
+      expand="sm"
+      collapseOnSelect
+      sticky="top"
+      variant="dark"
+      className={styles.panel}
+    >
       <Container fluid>
         <Navbar.Collapse
           id="page-navbar-nav-sum"
