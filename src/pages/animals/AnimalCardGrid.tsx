@@ -1,20 +1,12 @@
-import { FC, useEffect, useState } from "react";
-
-import styles from "@/styles/AnimalHeader.module.css";
-import AnimalCard from "@/component/card/AnimalCard";
+import { FC } from "react";
 import clsx from "clsx";
 import { MasonryInfiniteGrid } from "@egjs/react-infinitegrid";
+
+import AnimalCard from "@/component/card/AnimalCard";
+import styles from "@/styles/AnimalHeader.module.css";
+
 interface ICatCardsProps {
   list: any[];
-}
-function getItems(nextGroupKey: number, count: number) {
-  const nextItems = [];
-  const nextKey = nextGroupKey * count;
-
-  for (let i = 0; i < count; ++i) {
-    nextItems.push({ groupKey: nextGroupKey, key: nextKey + i });
-  }
-  return nextItems;
 }
 
 export const AnimalCardGrid: FC<ICatCardsProps> = ({ list }) => {

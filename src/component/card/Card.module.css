@@ -1,10 +1,6 @@
 
 .blogCard {
-  display: flex;
-  flex-direction: column;
-  margin: 1rem auto;
   box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1.6%;
   background: #fff;
   line-height: 1.4;
   font-family: sans-serif;
@@ -157,9 +153,51 @@
 }
 @media (min-width: 640px) {
   .blogCard {
-    flex-direction: column;
     width: min-content;
-    min-width: calc(100% / 3 - 30px) ;
+    min-width: calc(100% / 3 - 10px) ;
+  }
+  .blogCard .meta {
+    height: auto;
+  }
+  .blogCard .description {
+    flex-basis: 100%;
+  }
+  .blogCard .description:before {
+    transform: skewX(-3deg);
+    content: "";
+    background: #fff;
+    width: 30px;
+    position: absolute;
+    left: -10px;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+  .blogCard.alt {
+    flex-direction: row-reverse;
+  }
+  .blogCard.alt .description:before {
+    left: inherit;
+    right: -10px;
+    transform: skew(3deg);
+  }
+  .blogCard.alt .details {
+    padding-left: 25px;
+  }
+}
+@media (min-width: 600px) {
+  .blogCard {
+    min-width: calc(100% / 2 - 10px) ;
+  }
+}
+@media (min-width: 800px) {
+  .blogCard {
+    min-width: calc(100% / 3 - 15px) ;
+  }
+}
+@media (min-width: 1000px) {
+  .blogCard {
+    min-width: calc(100% / 4 - 15px) ;
   }
   .blogCard .meta {
     height: auto;
@@ -191,16 +229,10 @@
   }
 }
 @media (max-width: 640px) {
-
   .blogCard {
-    flex-direction: column;
-    max-width: 90%;
+    max-width: 100%;
   }
   .blogCard .meta {
     height: auto;
   }
-  .blogCard .description {
-    flex-basis: 100%;
-  }
-
 }
