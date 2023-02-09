@@ -9,10 +9,11 @@
 .main {
   display: grid;
   /* grid-template-columns: 1fr 2fr; */
-  grid-template-rows: 50px 50px 1fr;
+  grid-template-rows: 40px 50px 1fr;
   grid-row-gap: 1em;
 
-  color: #1e2125;
+  color: white;
+
 
   height: 100%;
 }
@@ -97,11 +98,14 @@
   margin-left: -400px;
 }
 .footer {
+  flex-wrap: nowrap;
   background: #262626;
   color: #a6aaad;
   display: flex;
   width: 100%;
   justify-content: center;
+  align-items: center;
+  flex-direction: row;
   //box-shadow: -1px -20px 60px 0px #1e2125;
 }
 .center::after {

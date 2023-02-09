@@ -19,7 +19,7 @@ const AnimalsHeader: FC<IPageHeaderProps> = ({ count }) => {
       variant="dark"
       className={styles.panel}
     >
-      <Container fluid>
+      <Container fluid className="d-flex w-100 justify-content-between">
         <Navbar.Collapse
           id="page-navbar-nav-sum"
           className="justify-content-start"
@@ -27,17 +27,21 @@ const AnimalsHeader: FC<IPageHeaderProps> = ({ count }) => {
           <Navbar.Text> Колличество животных: {count}</Navbar.Text>
         </Navbar.Collapse>
 
-        <Button
+        {/* <Button
           variant="outline-light"
           href="https://vk.com/lubimchik76?w=app5619682_-38870510&ysclid=ld9dg7m7ad739621248"
         >
           Стать куратором
-        </Button>
+        </Button>*/}
+
         <Button
+          className={styles.mainButton}
+          bsSize="large"
+          block
           variant="danger"
-          href="https://vk.com/lubimchik76?w=app5619682_-38870510&ysclid=ld9dg7m7ad739621248"
+          href="https://m.vk.com/app5619682_-38870510?act=app_r"
         >
-          Забрать домой
+          Стать ближе
         </Button>
       </Container>
     </Navbar>

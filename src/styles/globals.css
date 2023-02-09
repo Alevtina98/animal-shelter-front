@@ -6,7 +6,7 @@
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
   --foreground-rgb: 0, 0, 0;
-  --background-rgb: #ef5769;
+  --text-color: #d9919c;
   --bg-color: rgb(82, 77, 77);
   --card-bg-color: rgb(82, 77, 77);
   --primary-glow: conic-gradient(
@@ -35,6 +35,8 @@
   --callout-border-rgb: rgb(172, 175, 176);
   --card-rgb: rgb(180, 185, 188);
   --card-border-rgb: rgb(131, 134, 135);
+
+  
 }
 
 /*@media (prefers-color-scheme: dark) {
@@ -80,12 +82,6 @@ html,
 body {
   max-width: 100vw;
   position: relative;
-}
-
-body {
-
-  color: rgb(var(--foreground-rgb));
-  background-color: rgb(var(--background-rgb)) !important;
 }
 
 a {

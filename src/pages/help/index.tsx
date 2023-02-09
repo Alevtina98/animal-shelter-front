@@ -1,40 +1,39 @@
-import { FC, memo } from "react";
-import { Nav } from "react-bootstrap";
+import { FC, memo, useState } from "react";
+import { Nav, Tabs } from "react-bootstrap";
+import Tab from "react-bootstrap/Tab";
 import Layout from "@/component/Layout";
 import AnimalCardGrid from "@/pages/animals/AnimalCardGrid";
 import styles from "@/styles/PageHeader.module.css";
+import clsx from "clsx";
 
 const Help: FC = () => {
+  const [activeKey, setActiveKey] = useState<string>("donations");
   return (
     <div className={styles.panel}>
-      <Nav
-        justify
-        variant="tabs"
-        defaultActiveKey="link-5"
-        fill
+      <Tabs
+        defaultActiveKey="donations"
+        id="uncontrolled-tab-example"
         className={styles.tabs}
+        fill
+        onSelect={(eventKey: any) => {
+          setActiveKey(eventKey);
+        }}
       >
-        {/*кураторство/уборка/водитель/посылки/пожертвования*/}
-
-        <Nav.Item>
-          <Nav.Link eventKey="link-1">Кураторство</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="link-6">Передержка</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="link-2">Поездки</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="link-3">Реклама</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="link-4">Посылки </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="link-5">Пожертвования </Nav.Link>
-        </Nav.Item>
-      </Nav>
+        <Tab eventKey="curator" title="Кураторство" disabled></Tab>
+        <Tab eventKey="hostel" title="Передержка" disabled></Tab>
+        <Tab eventKey="travel" title="Поездки" disabled></Tab>
+        <Tab eventKey="advertising" title="Реклама" disabled></Tab>
+        <Tab eventKey="parcels" title="Посылки"></Tab>
+        <Tab eventKey="donations" title="Пожертвования">
+          <div className="w-100 d-flex justify-content-right m-5">
+            <img
+              className="w-25"
+              src="img/qr.png"
+              style={{ minWidth: "250px" }}
+            ></img>
+          </div>
+        </Tab>
+      </Tabs>
     </div>
   );
 };

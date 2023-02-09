@@ -1,9 +1,10 @@
 import Head from "next/head";
 import React from "react";
-import { Container, Row } from "react-bootstrap";
+import { Button, Container, Row } from "react-bootstrap";
 import NavbarHeader from "@/component/header/mainHeader/MainHeader";
 import styles from "@/styles/Home.module.css";
 import clsx from "clsx";
+import { FaVk } from "react-icons/fa";
 
 export const siteTitle = "Любимчик";
 
@@ -28,7 +29,12 @@ function Layout({ children, home }: ILayout) {
       </main>
       <footer>
         <Container fluid className={styles.footer}>
-          <Row>ЛЮБИМЧИК Помощь бездомным животным Рыбинск</Row>
+          <Button variant="icon" href="https://vk.com/lubimchik76">
+            <FaVk color="white" size="40"></FaVk>
+          </Button>
+          <div className="d-flex ">
+            ЛЮБИМЧИК Помощь бездомным животным Рыбинск
+          </div>
         </Container>
       </footer>
     </div>

@@ -1,4 +1,4 @@
-import { FC, memo, useState } from "react";
+import React, { FC, memo, useState } from "react";
 import { Button, Container, Form, Nav, NavDropdown } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import { FaVk } from "react-icons/fa";
@@ -37,23 +37,20 @@ const MainHeader: FC = () => {
             Помощь бездомным животным
           </span>*/}
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
         <Navbar.Collapse
           id="basic-navbar-nav"
           className="justify-content-center"
         >
           <Nav activeKey={router.pathname} className="me-auto">
-            <Nav.Link href="/team">Команда</Nav.Link>
-
-            <Nav.Link href="/help">Помощь </Nav.Link>
+            <Nav.Link href="/team">Наша команда</Nav.Link>
+            <Nav.Link href="/animals">Подопечные</Nav.Link>
 
             {/* волонтеры и их истории/СМИ
             <Nav.Link href="/team">Команда</Nav.Link>*/}
             {/*   кураторство/уборка/водитель/посылки/пожертвования
             <Nav.Link href="/help">Помощь</Nav.Link>*/}
             {/*на улице/на лечении/на пристрое/дома - для всех форм фильтр*/}
-            <Nav.Link href="/animals">Любимчики</Nav.Link>
 
             {/* <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
@@ -64,16 +61,22 @@ const MainHeader: FC = () => {
           </Navbar.Text>
         </Navbar.Collapse>*/}
           </Nav>
+          {/*
           <Navbar.Collapse className="justify-content-end">
-            <Button variant="icon" href="https://vk.com/lubimchik76">
-              <FaVk></FaVk>
-            </Button>
+
             <Nav>
               <Nav.Link href="/login">Регистрация </Nav.Link>
               <Nav.Link href="/login">Вход </Nav.Link>
             </Nav>
-          </Navbar.Collapse>
+          </Navbar.Collapse>*/}
+          <Form className="d-flex">
+            <Button variant="danger" href="/help">
+              Помочь
+            </Button>
+          </Form>
         </Navbar.Collapse>
+
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
       </Container>
     </Navbar>
   );

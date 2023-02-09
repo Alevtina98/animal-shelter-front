@@ -1,6 +1,5 @@
 .filtersContainer {
-    padding: 0;
-    margin-left: 10px;
+
 }
 
 .filters::-webkit-scrollbar {
@@ -19,6 +18,7 @@
     flex-direction: row;
 }
 .filters span {
+    margin-left: 6px;
     scroll-snap-align: start;
     max-height: 30px;
 }
@@ -31,19 +31,30 @@
     width: 100%;
     background: var(--bg-color);
     color: white;
+
+}
+.panel .mainButton {
+    width: auto;
+
+}
+@media (max-width: 640px) {
+    .panel .mainButton {
+        width: 100%;
+    }
 }
 .panel nav{
-    background: var(--bg-color);
+    background: none
 }
-.panel span{
 
-    margin-right: 6px;
-}
 .panel a{
     margin-left: 6px;
 }
-.tabs a, .tabs:hover a, .tabs a.active{
+.tabs {
+    --bs-nav-tabs-link-active-bg:var(--bg-color);
+    --bs-nav-tabs-link-active-color: white;
+    --bs-nav-link-color: white;
+    --bs-nav-link-hover-color: white;
+    
 
-    color: white !important;
-    background: none !important;
 }
+
