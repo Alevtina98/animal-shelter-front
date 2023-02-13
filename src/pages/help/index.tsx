@@ -1,11 +1,13 @@
 import { FC, memo, useState } from "react";
-import { Nav, Tabs } from "react-bootstrap";
+import { Container, Nav, Row, Tabs } from "react-bootstrap";
 import Tab from "react-bootstrap/Tab";
 import Layout from "@/component/Layout";
 import AnimalCardGrid from "@/pages/animals/AnimalCardGrid";
+import scrollContainerStyles from "@/styles/AnimalHeader.module.css";
 import styles from "@/styles/PageHeader.module.css";
+import cardStyles from "@/component/card/Card.module.css";
 import clsx from "clsx";
-
+import * as help from "../../../public/help.json";
 const Help: FC = () => {
   const [activeKey, setActiveKey] = useState<string>("donations");
   return (
@@ -25,13 +27,47 @@ const Help: FC = () => {
         <Tab eventKey="advertising" title="Реклама" disabled></Tab>
         <Tab eventKey="parcels" title="Посылки"></Tab>
         <Tab eventKey="donations" title="Пожертвования">
-          <div className="w-100 d-flex justify-content-right m-5">
-            <img
-              className="w-25"
-              src="img/qr.png"
-              style={{ minWidth: "250px" }}
-            ></img>
-          </div>
+          <Container>
+            <Row>
+              <img src={help?.posterImg} className="p-0"></img>
+            </Row>
+            <Row>
+              <div
+                className={clsx(
+                  cardStyles.mainTextCard,
+                  cardStyles.helpFinText
+                )}
+              >
+                {help.finText}
+                <Row></Row>
+                <Container className="mb-3 d-flex flex-row">
+                  <img
+                    className="w-25 p-0"
+                    src={help.qrImage}
+                    style={{ minWidth: "200px" }}
+                  ></img>
+                  <Container className="d-flex flex-column h-100 justify-content-between align-items-start">
+                    <div className="mt-3">
+                      {Object.keys(help.sber).map((key) => (
+                        <Row>
+                          {key}: {help.sber[key]}
+                        </Row>
+                      ))}
+                    </div>
+
+                    <div className="mt-3">
+                      {Object.keys(help.else).map((key) => (
+                        <Row>
+                          {key}: {help.else[key]}
+                        </Row>
+                      ))}
+                    </div>
+                  </Container>
+                </Container>
+                <Container></Container>
+              </div>
+            </Row>
+          </Container>
         </Tab>
       </Tabs>
     </div>

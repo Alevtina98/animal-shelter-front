@@ -2,6 +2,7 @@ import { FC, memo, useEffect, useState } from "react";
 import { Carousel, Container, Row } from "react-bootstrap";
 import * as team from "../../../public/team.json";
 import styles from "@/component/card/Card.module.css";
+import clsx from "clsx";
 
 export interface ITeamInfo {
   title: string;
@@ -39,13 +40,16 @@ const Team: FC = () => {
         </div>
       </Row>
       <Row>
-        <div className="mb-4">{info?.descriptionText}</div>
+        <div className={clsx("mb-4 fw-semibold", styles.mainTextCard)}>
+          {info?.descriptionText}
+        </div>
       </Row>
       <Row>
         <div className="mb-4">{info?.finText}</div>
       </Row>
+      <Row>{/*<img src={info?.posterImg}></img>*/}</Row>
       <Row>
-        <img src={info?.posterImg}></img>
+        <div className={styles.authorTextCard}>{info?.quoteList[0].text}</div>
       </Row>
     </Container>
   );
