@@ -32,26 +32,27 @@ const Team: FC = () => {
     loadInfo().then((r) => {});
   }, [team]);
   return (
-    <Container>
+    <>
       <Row>
         <h2 className="mb-4">{info?.title}</h2>
-        <div className="h-100 w-100 d-flex flex-column justify-content-between">
-          <div></div>
-        </div>
       </Row>
-      <Row>
-        <div className={clsx("mb-4 fw-semibold", styles.mainTextCard)}>
+      <Container className="overflow-auto h-100 position-absolute">
+        <Row className={clsx("", styles.mainTextCard)}>
           {info?.descriptionText}
-        </div>
-      </Row>
-      <Row>
-        <div className="mb-4">{info?.finText}</div>
-      </Row>
-      <Row>{/*<img src={info?.posterImg}></img>*/}</Row>
-      <Row>
-        <div className={styles.authorTextCard}>{info?.quoteList[0].text}</div>
-      </Row>
-    </Container>
+        </Row>
+        <Row
+          className={clsx(
+            styles.authorTextCard,
+            "w-100 d-flex  justify-content-end"
+          )}
+        >
+          {info?.quoteList[0].text}
+        </Row>
+        <Row className="h-auto">
+          <img className={styles.photo} src={info?.img}></img>
+        </Row>
+      </Container>
+    </>
   );
 };
 export default memo(Team);

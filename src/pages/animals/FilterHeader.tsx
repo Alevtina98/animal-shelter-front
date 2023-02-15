@@ -59,7 +59,7 @@ const AnimalsHeader: FC<IPageHeaderProps> = ({}) => {
               </Button>
             </Badge>
             <Badge pill bg="light" text="dark">
-              ищет дом
+              кошка
               <Button
                 size="sm"
                 variant="icon"
@@ -68,7 +68,7 @@ const AnimalsHeader: FC<IPageHeaderProps> = ({}) => {
                 <FaTimes />
               </Button>
             </Badge>
-            <Badge pill bg="light" text="dark">
+            {/* <Badge pill bg="light" text="dark">
               ищет дом
               <Button
                 size="sm"
@@ -87,7 +87,7 @@ const AnimalsHeader: FC<IPageHeaderProps> = ({}) => {
               >
                 <FaTimes />
               </Button>
-            </Badge>
+            </Badge>*/}
           </div>
         </div>
       </Container>

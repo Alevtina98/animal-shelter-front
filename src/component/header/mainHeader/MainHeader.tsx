@@ -24,11 +24,11 @@ const MainHeader: FC = () => {
     >
       <Container>
         <Navbar.Brand href="/team">
-          {/*<img
+          {/*  <img
             alt=""
-            src="/icon/Cat.svg"
-            width="40"
-            height="40"
+            // src="/icon/logo.png"
+            width="30"
+            height="30"
             className="d-inline-block align-top"
           />*/}
           Любимчик

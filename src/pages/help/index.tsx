@@ -27,11 +27,11 @@ const Help: FC = () => {
         <Tab eventKey="advertising" title="Реклама" disabled></Tab>
         <Tab eventKey="parcels" title="Посылки"></Tab>
         <Tab eventKey="donations" title="Пожертвования">
-          <Container>
+          <Container className="position-relative">
             <Row>
               <img src={help?.posterImg} className="p-0"></img>
             </Row>
-            <Row>
+            <Row className="overflow-auto h-100 position-absolute">
               <div
                 className={clsx(
                   cardStyles.mainTextCard,
@@ -39,8 +39,7 @@ const Help: FC = () => {
                 )}
               >
                 {help.finText}
-                <Row></Row>
-                <Container className="mb-3 d-flex flex-row">
+                <Container className="mb-3 d-flex flex-row flex-wrap">
                   <img
                     className="w-25 p-0"
                     src={help.qrImage}
