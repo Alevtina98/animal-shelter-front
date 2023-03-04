@@ -23,7 +23,7 @@ const MainHeader: FC = () => {
       className={styles.mainHeader}
     >
       <Container>
-        <Navbar.Brand href="/help">
+        <Navbar.Brand href="/team">
             <img
             alt=""
            src="/icon/logo.png"
@@ -37,15 +37,19 @@ const MainHeader: FC = () => {
             Помощь бездомным животным
           </span>*/}
         </Navbar.Brand>
-
+       
+       
+        
+      
         <Navbar.Collapse
           id="basic-navbar-nav"
           className="justify-content-center"
         >
           <Nav activeKey={router.pathname} className="me-auto">
-            <Nav.Link href="/team">Наша команда</Nav.Link>
-            <Nav.Link href="/animals">Подопечные</Nav.Link>
-
+           <Nav.Link href="/team">Наша команда</Nav.Link>
+           <Nav.Link href="/animals">Фонд</Nav.Link>
+           <Nav.Link href="/animals">Подопечные</Nav.Link>
+           
             {/* волонтеры и их истории/СМИ
             <Nav.Link href="/team">Команда</Nav.Link>*/}
             {/*   кураторство/уборка/водитель/посылки/пожертвования
@@ -69,14 +73,15 @@ const MainHeader: FC = () => {
               <Nav.Link href="/login">Вход </Nav.Link>
             </Nav>
           </Navbar.Collapse>*/}
-          <Form className="d-flex">
+          
+        </Navbar.Collapse>
+       
+        <Form className="d-flex">
             <Button variant="danger" href="/help">
               Помочь
             </Button>
           </Form>
-        </Navbar.Collapse>
-
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+         {/* <Navbar.Toggle aria-controls="basic-navbar-nav" />*/}
       </Container>
     </Navbar>
   );

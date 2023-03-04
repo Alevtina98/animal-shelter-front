@@ -1,0 +1,9 @@
+.card {
+    display: flex;
+    flex-direction: row;
+}
+@media (max-width: 640px) {
+   .card {
+    flex-direction: column;
+   }
+}

@@ -1,9 +1,11 @@
 import { FC, memo, useEffect, useState } from "react";
-import { Carousel, Container, Row } from "react-bootstrap";
+import { Carousel, Col, Container, Navbar, Row, Button } from "react-bootstrap";
 import * as team from "../../../public/team.json";
 import styles from "@/component/card/Card.module.css";
+import teamStyles from "@/styles/Team.module.css";
 import clsx from "clsx";
-
+import animalsStyles from "@/styles/AnimalHeader.module.css";
+import pageHeaderStyles from "@/styles/PageHeader.module.css";
 export interface ITeamInfo {
   title: string;
   subTitle: string;
@@ -33,24 +35,73 @@ const Team: FC = () => {
   }, [team]);
   return (
     <>
-      <Row>
-        <h2 className="mb-4">{info?.title}</h2>
-      </Row>
-      <Container className="overflow-auto h-100 position-absolute">
-        <Row className={clsx("", styles.mainTextCard)}>
-          {info?.descriptionText}
-        </Row>
-        <Row
+    <div className={pageHeaderStyles.animalContainer}>
+    <Navbar
+        expand="sm"
+        collapseOnSelect
+        sticky="top"
+        variant="dark"
+        className={pageHeaderStyles.panel}
+      >
+        <Container fluid className="d-flex w-100 justify-content-between">
+          <Navbar.Collapse
+            id="page-navbar-nav-sum"
+            className="justify-content-start"
+          >
+            <Navbar.Text><h2>{info?.title}</h2></Navbar.Text>
+          </Navbar.Collapse>
+
+         <Button
+        
+            variant="outline-light"
+            href=""
+            style={{margin:0}}
+          >
+            Фонд
+          </Button>
+       
+        </Container>
+      </Navbar>
+    </div>
+      
+      <Container
           className={clsx(
-            styles.authorTextCard,
-            "w-100 d-flex  justify-content-end"
+            "container overflow-auto flex-fill d-flex",
+            animalsStyles.cardContainer
           )}
-        >
-          {info?.quoteList[0].text}
-        </Row>
-        <Row className="h-auto">
-          <img className={styles.photo} src={info?.img}></img>
-        </Row>
+          >
+          <div className="overflow-auto h-100 position-absolute">
+            <div  className={clsx("", styles.mainTextCard)}>
+              <div className={clsx("h-100", teamStyles.card)}>
+                <div style={{display: "flex", flexDirection: "column", justifyContent: "space-between", marginBottom: ""}}>
+                {info?.descriptionText}
+                
+                <Button
+                  className={styles.mainButton}
+                  variant="danger"
+                  href="/animals"
+                 
+                >
+                 Подопечные
+                </Button>
+               
+                 
+                </div>
+               
+                <div className={styles.blogCard}>
+                  <img className={styles.photo} src={info?.img}></img>
+                </div>
+              </div>
+            </div>
+            <div
+              className={clsx(
+                styles.authorTextCard,
+                "w-100 d-flex  justify-content-end"
+              )}
+            >
+            {info?.quoteList[0].text}
+            </div>
+          </div>
       </Container>
     </>
   );
