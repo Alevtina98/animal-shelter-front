@@ -23,15 +23,15 @@ const MainHeader: FC = () => {
       className={styles.mainHeader}
     >
       <Container>
-        <Navbar.Brand href="/team">
-          {/*  <img
+        <Navbar.Brand href="/help">
+            <img
             alt=""
-            // src="/icon/logo.png"
-            width="30"
-            height="30"
+           src="/icon/logo.png"
+            width="70"
+            height="50"
             className="d-inline-block align-top"
-          />*/}
-          Любимчик
+          />
+         
           {/* <span className="fs-6  text-secondary">
             {" "}
             Помощь бездомным животным

@@ -36,8 +36,8 @@ const AnimalsHeader: FC<IPageHeaderProps> = ({ count }) => {
 
         <Button
           className={styles.mainButton}
-          bsSize="large"
-          block
+         
+        
           variant="outline-light"
           href="https://m.vk.com/app5619682_-38870510?act=app_r"
         >
