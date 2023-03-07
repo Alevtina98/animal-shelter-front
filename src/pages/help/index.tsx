@@ -1,15 +1,37 @@
-import { FC, memo, useState } from "react";
-import { Container, Nav, Row, Tabs } from "react-bootstrap";
-import Tab from "react-bootstrap/Tab";
-import Layout from "@/component/Layout";
-import AnimalCardGrid from "@/pages/animals/AnimalCardGrid";
-import scrollContainerStyles from "@/styles/AnimalHeader.module.css";
+import { FC, memo, useState, useMemo } from "react";
+import { Container, Row, Tabs, Tab } from "react-bootstrap";
+import clsx from "clsx";
+
 import styles from "@/styles/PageHeader.module.css";
 import cardStyles from "@/component/card/Card.module.css";
-import clsx from "clsx";
 import * as help from "../../../public/help.json";
+
+type SberInfoType = "Номер карты Сбербанка" | "прикреплена к номеру" | "владелец";
+interface IHelpInfo {
+  "title": string,
+  "qrImage": string,
+  "posterImg": string,
+  "finText": string,
+  "labelText": string,
+  "sber": {
+    "Номер карты Сбербанка": string,
+    "прикреплена к номеру": string,
+    "оформлена на": string,
+    "владелец": string
+  },
+  "else": {
+    "Номер ГТ": string,
+    "Яндекс деньги": string,
+    "Киви": string,
+    "Красная кнопка": string
+  }
+}
+
 const Help: FC = () => {
   const [activeKey, setActiveKey] = useState<string>("donations");
+  const helpInfo = useMemo<IHelpInfo>(()=>{
+    return help
+  }, [help])
   return (
     <div className={styles.panel}>
       <Tabs
@@ -29,7 +51,7 @@ const Help: FC = () => {
         <Tab eventKey="donations" title="Пожертвования">
           <Container className="position-relative">
             <Row>
-              <img src={help?.posterImg} className="p-0"></img>
+              <img src={helpInfo?.posterImg} className="p-0"></img>
             </Row>
             <Row className="overflow-auto h-100 position-absolute">
               <div
@@ -38,7 +60,7 @@ const Help: FC = () => {
                   cardStyles.helpFinText
                 )}
               >
-                {help.finText}
+                {helpInfo.finText}
                 <Container className="mb-3 d-flex flex-row flex-wrap">
                   <img
                     className="w-25 p-0"
@@ -47,17 +69,21 @@ const Help: FC = () => {
                   ></img>
                   <Container className="d-flex flex-column h-100 justify-content-between align-items-start">
                     <div className="mt-3">
-                      {Object.keys(help.sber).map((key) => (
-                        <Row>
-                          {key}: {help.sber[key]}
-                        </Row>
-                      ))}
+                       <Row>
+                          Номер карты Сбербанка: {helpInfo.sber["Номер карты Сбербанка"]} 
+                       </Row>
+                       <Row>
+                          прикреплена к номеру: {helpInfo.sber["прикреплена к номеру"]} 
+                       </Row>
+                       <Row>
+                          (оформлена на {helpInfo.sber["оформлена на"]})
+                       </Row>
                     </div>
 
                     <div className="mt-3">
                       {Object.keys(help.else).map((key) => (
                         <Row>
-                          {key}: {help.else[key]}
+                          {key}: {helpInfo.else[key]}
                         </Row>
                       ))}
                     </div>

@@ -52,18 +52,16 @@ const Team: FC = () => {
           </Navbar.Collapse>
 
          <Button
-        
+         className={pageHeaderStyles.mainButton}
             variant="outline-light"
             href=""
-            style={{margin:0}}
+          
           >
             Фонд
           </Button>
        
         </Container>
       </Navbar>
-    </div>
-      
       <Container
           className={clsx(
             "container overflow-auto flex-fill d-flex",
@@ -73,14 +71,14 @@ const Team: FC = () => {
           <div className="overflow-auto h-100 position-absolute">
             <div  className={clsx("", styles.mainTextCard)}>
               <div className={clsx("h-100", teamStyles.card)}>
-                <div style={{display: "flex", flexDirection: "column", justifyContent: "space-between", marginBottom: ""}}>
+                <div style={{display: "flex", flexDirection: "column", justifyContent: "space-between"}}>
                 {info?.descriptionText}
                 
                 <Button
                   className={styles.mainButton}
                   variant="danger"
                   href="/animals"
-                 
+                 style={{marginBottom: "6px", marginRight: "6px", marginTop: "6px"}}
                 >
                  Подопечные
                 </Button>
@@ -103,6 +101,9 @@ const Team: FC = () => {
             </div>
           </div>
       </Container>
+    </div>
+      
+      
     </>
   );
 };
