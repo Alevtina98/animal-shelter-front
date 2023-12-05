@@ -1,0 +1,5 @@
+.cardContainer {
+    height: 100%;
+    background: var(--card-bg-color);
+}
+

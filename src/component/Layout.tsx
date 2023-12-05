@@ -1,12 +1,13 @@
-import Head from "next/head";
 import React from "react";
-import { Button, Container, Row } from "react-bootstrap";
-import NavbarHeader from "@/component/header/mainHeader/MainHeader";
-import styles from "@/styles/Home.module.css";
+import Head from "next/head";
+import { Container } from "react-bootstrap";
 import clsx from "clsx";
-import { FaVk } from "react-icons/fa";
 
-export const siteTitle = "Любимчик";
+import AppTab from "@/component/app/AppTab";
+import AppHeader from "@/component/app/appHeader/AppHeader";
+import AppFooter from "@/component/app/appFooter/AppFooter";
+
+import styles from "@/styles/Home.module.css";
 
 interface ILayout {
   children: React.ReactNode;
@@ -17,10 +18,10 @@ function Layout({ children, home }: ILayout) {
   return (
     <div className="w-100 h-100 position-fixed d-flex mh-100 flex-column">
       <Head>
-        <title>{siteTitle}</title>
+        <AppTab />
       </Head>
       <header>
-        <NavbarHeader />
+        <AppHeader />
       </header>
       <main className={clsx("flex-fill", styles.mainContainer)}>
         <Container className={clsx("flex-fill", styles.main)}>
@@ -28,14 +29,7 @@ function Layout({ children, home }: ILayout) {
         </Container>
       </main>
       <footer>
-        <Container fluid className={styles.footer}>
-          <Button variant="icon" href="https://vk.com/lubimchik76">
-            <FaVk color="white" size="40"></FaVk>
-          </Button>
-          <div className="d-flex ">
-            ЛЮБИМЧИК Помощь бездомным животным Рыбинск
-          </div>
-        </Container>
+        <AppFooter />
       </footer>
     </div>
   );

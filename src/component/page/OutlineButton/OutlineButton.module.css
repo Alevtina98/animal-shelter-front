@@ -1,0 +1,9 @@
+.pageButton {
+    width: auto;
+
+}
+@media (max-width: 640px) {
+    .pageButton {
+        width: 100%;
+    }
+}

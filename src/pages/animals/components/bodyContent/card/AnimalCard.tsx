@@ -27,7 +27,7 @@ export const AnimalCard: FC<IAnimalCardProps> = ({
         <img className={styles.photo} src={photoPath}></img>
         <ul className={styles.details}>
           <li className={styles.author}>
-            <a href="https://vk.com/market-38870510?w=product-38870510_6667015%2Fquery">
+            <a href="https://vk.com/market-38870510?w=product-38870510_6667015%2Fquery" target="_blank" rel="noopener noreferrer">
               {name}
             </a>
           </li>

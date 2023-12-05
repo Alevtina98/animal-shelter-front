@@ -1,0 +1,14 @@
+.pageFooter {
+    color: #a6aaad;
+
+    height: min-content;
+    width: 100%;
+
+    align-self: end;
+}
+@media (max-width: 640px) {
+    .pageFooter {
+        font-size: small
+    }
+}
+

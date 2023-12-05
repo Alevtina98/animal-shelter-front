@@ -1,0 +1,18 @@
+.footer {
+    flex-wrap: nowrap;
+    background: #262626;
+    color: #a6aaad;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+//box-shadow: -1px -20px 60px 0px #1e2125;
+}
+
+@media (max-width: 640px) {
+    .footer {
+        font-size: x-small;
+        font-size: 0;
+    }
+}

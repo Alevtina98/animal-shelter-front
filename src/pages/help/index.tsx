@@ -3,8 +3,8 @@ import { Container, Row, Tabs, Tab } from "react-bootstrap";
 import clsx from "clsx";
 
 import styles from "@/styles/PageHeader.module.css";
-import cardStyles from "@/component/card/Card.module.css";
-import * as help from "../../../public/help.json";
+import cardStyles from "@/pages/animals/components/bodyContent/card/Card.module.css";
+import * as help from "./help.json";
 
 type SberInfoType = "Номер карты Сбербанка" | "прикреплена к номеру" | "владелец";
 interface IHelpInfo {

@@ -1,0 +1,19 @@
+.navActive {
+    font-weight: bold;
+}
+
+.mainHeader {
+    background: #7c7676;
+    padding: 0;
+    /*:global(.collapsed) {
+        .collapseElement {
+            display: none;
+        }
+    }*/
+}
+
+@media (max-width: 640px) {
+    .collapseElement {
+       display: none !important;
+    }
+}

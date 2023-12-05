@@ -1,0 +1,40 @@
+.card {
+    background: white;
+    border-radius: 5px;
+    box-shadow:
+            rgb(50 50 93 / 25%) 0 13px 27px -5px, rgb(0 0 0 / 30%) 0 8px 16px -8px;
+
+    color: black;
+
+    position: relative;
+    overflow: hidden;
+
+    height: 100%;
+    width: 100%;
+
+    .scrollContainer {
+        padding: 20px;
+
+        position: absolute;
+        overflow: auto;
+
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+
+
+@media (max-width: 640px) {
+    .card {
+        flex-direction: column;
+        font-size: 14px;
+
+        .scrollContainer {
+            padding: 15px;
+        }
+    }
+}

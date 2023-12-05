@@ -2,21 +2,15 @@ import { FC } from "react";
 import clsx from "clsx";
 import { MasonryInfiniteGrid } from "@egjs/react-infinitegrid";
 
-import AnimalCard from "@/component/card/AnimalCard";
+import AnimalCard from "@/pages/animals/components/bodyContent/card/AnimalCard";
 import styles from "@/styles/AnimalHeader.module.css";
 
 interface ICatCardsProps {
   list: any[];
 }
 
-export const AnimalCardGrid: FC<ICatCardsProps> = ({ list }) => {
+export const AnimalsContent: FC<ICatCardsProps> = ({ list }) => {
   return (
-    <div
-      className={clsx(
-        "container overflow-auto flex-fill d-flex",
-        styles.cardContainer
-      )}
-    >
       <MasonryInfiniteGrid className="container" gap={20}>
         {list.map((item) => (
           <AnimalCard
@@ -31,8 +25,7 @@ export const AnimalCardGrid: FC<ICatCardsProps> = ({ list }) => {
           ></AnimalCard>
         ))}
       </MasonryInfiniteGrid>
-    </div>
   );
 };
 
-export default AnimalCardGrid;
+export default AnimalsContent;
