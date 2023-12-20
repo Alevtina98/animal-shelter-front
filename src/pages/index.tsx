@@ -1,15 +1,14 @@
 import { Inter } from "@next/font/google";
 import { Carousel } from "react-bootstrap";
 import Layout from "@/component/Layout";
-import {FC, memo} from "react";
-import MainCarousel, {ICarouselItem} from "@/component/MainCarousel";
+import { FC, memo } from "react";
+import MainCarousel, { ICarouselItem } from "@/component/MainCarousel";
 
 const inter = Inter({ subsets: ["latin"] });
 
-
 const homeCarouselImgList: ICarouselItem[] = [
-  { index: 0, name: "1" },
-  { index: 1, name: "0" },
+  { index: 0, name: "0" },
+  { index: 1, name: "1" },
   { index: 2, name: "2" },
   { index: 3, name: "3" },
   { index: 4, name: "4" },
@@ -31,12 +30,12 @@ const homeCarouselImgList: ICarouselItem[] = [
   { index: 20, name: "20" },
   { index: 21, name: "21" },
   { index: 22, name: "22" },
-]
+];
 const Home: FC = () => {
-  return  <div className="d-flex justify-content-between flex-column h-100 position-absolute">
-
-  <MainCarousel catalog="/img/team" list={homeCarouselImgList}/>
-
-  </div>
+  return (
+    <div className="d-flex justify-content-between flex-column h-100 position-absolute">
+      <MainCarousel catalog="/img/team" list={homeCarouselImgList} />
+    </div>
+  );
 };
 export default memo(Home);

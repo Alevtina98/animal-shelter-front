@@ -18,7 +18,7 @@ const AnimalsHeader: FC<IPageHeaderProps> = ({ resultCount, filters }) => (
                 <> Колличество животных: {resultCount} </>
             }
             button={{
-                caption: "Стать ближе",
+                caption: "Познакомиться",
                 link: "https://m.vk.com/app5619682_-38870510?act=app_r",
                 icon: <FaVk size="25" className="me-2"></FaVk>
 
