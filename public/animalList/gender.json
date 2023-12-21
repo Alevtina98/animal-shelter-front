@@ -1,0 +1,12 @@
+{
+  "gender": [
+    {
+      "value": "м",
+      "animalIdList": ["2"]
+    },
+    {
+      "value": "ж",
+      "animalIdList": ["1","3"]
+    }
+  ]
+}

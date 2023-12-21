@@ -1,0 +1,44 @@
+{
+  "photo": [
+    {
+      "animalId":  "1",
+      "photo": ["animal/Маруся/cat1.jpg","animal/Маруся/cat4.jpg"]
+    },
+    {
+      "animalId":  "2",
+      "photo": ["animal/Кеша/cat2.jpg","animal/Кеша/cat5.jpg"]
+    },
+    {
+      "animalId":  "3",
+      "photo": ["animal/Асти/cat3.jpg", "animal/Асти/1.jpg"]
+    },
+    {
+      "animalId":  "4",
+      "photo": ["animal/Офелия/1.jpg"]
+    },
+    {
+      "animalId":  "5",
+      "photo": ["animal/Сырок/2.jpg"]
+    },
+    {
+      "animalId":  "6",
+      "photo": ["animal/Жасмин/1.jpg"]
+    },
+    {
+      "animalId":  "7",
+      "photo": ["animal/Виски/1.jpg"]
+    },
+    {
+      "animalId":  "8",
+      "photo": ["animal/Вассаби/1.jpg"]
+    },
+    {
+      "animalId":  "9",
+      "photo": ["animal/Феля/1.jpg"]
+    }, {
+      "animalId":  "10",
+      "photo": ["animal/Тиша/1.jpg"]
+    }
+
+  ]
+}

@@ -6,14 +6,17 @@ import clsx from "clsx";
 import Filter from "@/pages/animals/components/headerContent/Filter";
 
 import styles from "@/styles/PageHeader.module.css";
-import BadgeList, { FilterKeyType } from "@/pages/animals/components/headerContent/bage/BadgeList";
+import BadgeList, {
+  FilterValueType,
+} from "@/pages/animals/components/headerContent/bage/BadgeList";
+import { UserFilterType } from "@/pages/animals/components/bodyContent/AnimalsContent";
 // примеры
 // https://dobrovmeste.ru/novosti-fonda-pomoshhi-bezdomnym-zhivotnym
 
 export interface IPageHeaderProps {
-  badges: FilterKeyType[];
+  badges: UserFilterType[];
 }
-const FilterHeader: FC<IPageHeaderProps> = ({badges}) => {
+const FilterHeader: FC<IPageHeaderProps> = ({ badges }) => {
   return (
     <Navbar
       expand="sm"
@@ -22,7 +25,6 @@ const FilterHeader: FC<IPageHeaderProps> = ({badges}) => {
       className={clsx("flex-nowrap", styles.panel)}
     >
       <Container fluid className="d-flex h-100 w-100 justify-content-between">
-
         <div>
           <Filter />
         </div>
@@ -31,9 +33,8 @@ const FilterHeader: FC<IPageHeaderProps> = ({badges}) => {
           className="overflow-hidden position-relative w-100 h-100"
           style={{ marginLeft: "6px" }}
         >
-         <BadgeList keyList={badges}/>
+          <BadgeList keyList={Object.values(badges)} />
         </div>
-
       </Container>
     </Navbar>
   );

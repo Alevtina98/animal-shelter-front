@@ -1,0 +1,20 @@
+{
+  "color": [
+    {
+      "value": "степной",
+      "animalIdList": ["1", "4"]
+    },
+    {
+      "value": "лесной",
+      "animalIdList": ["2"]
+    },
+    {
+      "value": "калико",
+      "animalIdList": ["3"]
+    },
+    {
+      "value": "другой",
+      "animalIdList": ["5"]
+    }
+  ]
+}

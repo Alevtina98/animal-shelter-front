@@ -1,15 +1,17 @@
 import React, { FC, memo, useEffect, useState } from "react";
 
-import { FilterKeyType } from "@/pages/animals/components/headerContent/bage/BadgeList";
+import AnimalsHeader from "./components/AnimalsHeader";
+import AnimalsBody from "./components/AnimalsBody";
 
-import AnimalsHeader from "./AnimalsHeader";
-import AnimalsBody from "./AnimalsBody";
-
-import * as animalFiles from "./data/animals.json";
+import * as animalFiles from "../../../public/animal/animal.json";
+import { UserFilterType } from "@/pages/animals/components/bodyContent/AnimalsContent";
 
 const Animals: FC = () => {
   const [resultList, setResultList] = useState<any>([]);
-  const filterKeyList: FilterKeyType[] = ["lookingHome", "cat"]
+  const userFilter: UserFilterType = {
+    /*  status: "ищет дом",
+    color: "степной",*/
+  } as UserFilterType;
 
   useEffect(() => {
     const loadList = async () => {
@@ -23,8 +25,8 @@ const Animals: FC = () => {
 
   return (
     <>
-      <AnimalsHeader resultCount={resultList.length} filters={filterKeyList}/>
-      <AnimalsBody list={resultList} />
+      <AnimalsHeader resultCount={resultList.length} filters={userFilter} />
+      <AnimalsBody list={resultList} filters={userFilter} />
     </>
   );
 };
