@@ -10,7 +10,7 @@
     },
     {
       "animalId":  "3",
-      "photo": ["animal/Асти/cat3.jpg", "animal/Асти/1.jpg"]
+      "photo": ["animal/Асти/1.jpg","animal/Асти/cat3.jpg"]
     },
     {
       "animalId":  "4",
