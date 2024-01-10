@@ -5,6 +5,7 @@ import appStyles from "@/component/app/appHeader/AppHeader.module.css";
 import styles from "./AppHeader.module.css";
 import { useRouter } from "next/router";
 import clsx from "clsx";
+import Link from "next/link";
 
 // примеры
 // https://dobrovmeste.ru/novosti-fonda-pomoshhi-bezdomnym-zhivotnym
@@ -56,9 +57,15 @@ const AppHeader: FC = () => {
           <Offcanvas.Body>
             <Nav activeKey={router.pathname} className="me-auto">
               {/* <Nav.Link href="">Галерея</Nav.Link>*/}
-              <Nav.Link href="/team">Наша команда</Nav.Link>
-              <Nav.Link href="/animals">Подопечные</Nav.Link>
-              <Nav.Link href="/help">Помощь</Nav.Link>
+              <Nav.Link as={Link} href="/team">
+                Наша команда
+              </Nav.Link>
+              <Nav.Link as={Link} href="/animals">
+                Подопечные
+              </Nav.Link>
+              <Nav.Link as={Link} href="/help">
+                Помощь
+              </Nav.Link>
 
               {/* волонтеры и их истории/СМИ
                     <Nav.Link href="/team">Команда</Nav.Link>*/}
