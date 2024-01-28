@@ -6,15 +6,13 @@ import clsx from "clsx";
 import Filter from "@/pages/animals/components/headerContent/Filter";
 
 import styles from "@/styles/PageHeader.module.css";
-import BadgeList, {
-  FilterValueType,
-} from "@/pages/animals/components/headerContent/bage/BadgeList";
+import BadgeList from "@/pages/animals/components/headerContent/bage/BadgeList";
 import { UserFilterType } from "@/pages/animals/components/bodyContent/AnimalsContent";
 // примеры
 // https://dobrovmeste.ru/novosti-fonda-pomoshhi-bezdomnym-zhivotnym
 
 export interface IPageHeaderProps {
-  badges: UserFilterType[];
+  badges: UserFilterType;
 }
 const FilterHeader: FC<IPageHeaderProps> = ({ badges }) => {
   return (

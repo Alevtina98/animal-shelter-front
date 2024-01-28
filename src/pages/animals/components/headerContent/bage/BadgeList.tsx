@@ -7,14 +7,6 @@ import clsx from "clsx";
 import styles from "@/styles/PageHeader.module.css";
 import { FilterValueType } from "@/pages/animals/components/bodyContent/AnimalsContent";
 
-export const filterLabel: Record<FilterValueType, string> = {
-  "ищет дом": "ищет дом",
-  dog: "собака",
-  cat: "кошка",
-  female: "девочка",
-  male: "мальчик",
-};
-
 export interface IBadgeList {
   keyList: FilterValueType[];
 }

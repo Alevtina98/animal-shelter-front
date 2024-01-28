@@ -5,7 +5,6 @@ import { FaVk } from "react-icons/fa";
 import styles from "@/styles/PageHeader.module.css";
 import FilterContent from "@/pages/animals/components/headerContent/FilterHeader";
 
-import { FilterValueType } from "@/pages/animals/components/headerContent/bage/BadgeList";
 import { UserFilterType } from "@/pages/animals/components/bodyContent/AnimalsContent";
 
 export interface IPageHeaderProps {

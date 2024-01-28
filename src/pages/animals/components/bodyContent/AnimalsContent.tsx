@@ -43,18 +43,18 @@ export interface IFileFilters {
   gender?: IFilterData[];
   genus?: IFilterData[];
   status?: IFilterData[];
+  color?: IFilterData[];
 }
 export interface IFilterKey {
   gender?: GenderType;
   genus?: GenusType;
   status?: StatusType;
+  color?: ColorType;
 }
 export interface ICardAnimal extends IFilterKey {
   name: string;
-
   photo?: string[];
   shortText?: string;
-  color?: ColorType;
 }
 export type CardAnimalType = Record<AnimalKeyType, ICardAnimal | null>;
 
@@ -82,25 +82,30 @@ export const AnimalsContent: FC<ICatCardsProps> = ({ list, filters }) => {
     const photoList = animalPhotoFile.photo;
     const shortTextList = animalShortTextFile.shortText;
     for (const { animalId, photo } of photoList) {
-      if (!cardAnimalRecord[animalId]) continue;
-      cardAnimalRecord[animalId].photo = photo;
+      const animalCard = cardAnimalRecord[animalId];
+      if (!animalCard) continue;
+      animalCard.photo = photo;
     }
     for (const { animalId, shortText } of shortTextList) {
-      if (!cardAnimalRecord[animalId]) continue;
-      cardAnimalRecord[animalId].shortText = shortText;
+      const animalCard = cardAnimalRecord[animalId];
+      if (!animalCard) continue;
+      animalCard.shortText = shortText;
     }
     const fileFilters: IFileFilters = {
-      gender: genderFile?.gender,
-      status: statusFile?.status,
-      genus: genusFile?.genus,
-      color: colorFile?.color,
+      gender: genderFile?.gender as IFilterData[],
+      status: statusFile?.status as IFilterData[],
+      genus: genusFile?.genus as IFilterData[],
+      color: colorFile?.color as IFilterData[],
     };
     Object.entries(fileFilters).forEach(([key, data]) => {
       const filterDataList = data as IFilterData[];
       for (const { value, animalIdList } of filterDataList) {
         animalIdList.forEach((animalId) => {
-          cardAnimalRecord[animalId as AnimalKeyType][key as FilterKeyType] =
-            value;
+          const animalCard: ICardAnimal | null =
+            cardAnimalRecord[animalId as AnimalKeyType];
+          const animalCardItemKey = key as FilterKeyType;
+          if (!animalCard || !animalCard[animalCardItemKey] || !value) return;
+          (animalCard[animalCardItemKey] as FilterValueType) = value;
         });
       }
     });
